@@ -72,10 +72,14 @@ def result_post():
 
     return render_template('index.html', data = data)
 
+#if __name__ == '__main__':
+#    app.debug = True
+#    app.run(host='localhost')
 if __name__ == '__main__':
-    app.debug = True
-    app.run(host='localhost')
+    port = os.environ.get('FLASK_PORT') or 8080
+    port = int(port)
 
+    app.run(port=port,host='0.0.0.0')
 
 
 
