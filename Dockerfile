@@ -19,7 +19,7 @@ COPY . ./app-src
 
 # Install the dependencies
 RUN pip install Flask
-RUN chown 777 /app-src
+RUN chmod 777 /app-src
 
 # Run the application
 CMD [ "python", "app.py" ]
