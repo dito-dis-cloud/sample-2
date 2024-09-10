@@ -7,8 +7,8 @@ app = Flask(__name__)
 def get_db():
     if 'db' not in g:
         # データベースをオープンしてFlaskのグローバル変数に保存
-       # g.db = sqlite3.connect('TestDB.db')
-        g.db = sqlite3.connect(':memory:')
+        g.db = sqlite3.connect('TestDB.db')
+       # g.db = sqlite3.connect(':memory:')
     return g.db
 
 @app.route('/')
@@ -43,7 +43,7 @@ def index():
     # 商品一覧を読み込み
     cur = con.execute("select * from 商品一覧 order by コード")
     data = cur.fetchall()
-    #con.close()
+    con.close()
 
     return render_template('index.html', data = data)
 
@@ -70,7 +70,7 @@ def result_post():
     # 一覧再読み込み
     cur = con.execute("select * from 商品一覧 order by コード")
     data = cur.fetchall()
-    #con.close()
+    con.close()
 
     return render_template('index.html', data = data)
 
