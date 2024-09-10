@@ -54,11 +54,11 @@ def result_post():
     price = request.form["price"]
 
     # オブジェクトの型で振る舞いを変える
-    if type(price) != int:
-        msg = print(f'{price}の型はintです')
-        return render_template('index.html', msg = msg)
-    else:
-        pass
+    #if type(price) != int:
+    #    msg = print(f'{price}の型はintです')
+    #    return render_template('index.html', msg = msg)
+    #else:
+    #    pass
 
     # データベースを開く
     con = get_db()
