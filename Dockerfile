@@ -19,6 +19,7 @@ COPY . .
 
 # Install the dependencies
 RUN pip install Flask
+RUN sqlite3 TestDB.db
 
 
 # Run the application
