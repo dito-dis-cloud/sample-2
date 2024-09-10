@@ -9,7 +9,7 @@ ENV FLASK_PORT=8080
 WORKDIR /app-src
 
 # Copy the content of the local src directory to the working directory
-COPY . ./app-src
+COPY . .
 
 # Add application sources with correct permissions for OpenShift
 USER 0
