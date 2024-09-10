@@ -60,7 +60,7 @@ def result_post():
     cur = con.execute("select MAX(コード) AS max_code from 商品一覧")
     for row in cur:
         new_code = row[0] + 1
-    #cur.close()
+    cur.close()
     
     # 登録処理
     sql = "INSERT INTO 商品一覧(コード, 商品名, 値段)values({},'{}',{})".format(new_code, name, price)
