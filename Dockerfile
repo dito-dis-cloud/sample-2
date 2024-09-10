@@ -9,7 +9,7 @@ ENV FLASK_PORT=8080
 WORKDIR /app-src
 
 # Copy the content of the local src directory to the working directory
-COPY . .
+COPY . ./app-src
 
 # Add application sources with correct permissions for OpenShift
 #USER 0
@@ -19,8 +19,7 @@ COPY . .
 
 # Install the dependencies
 RUN pip install Flask
-RUN sqlite3 TestDB.db
-
+RUN chown 777 /app-src
 
 # Run the application
 CMD [ "python", "app.py" ]
