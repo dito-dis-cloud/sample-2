@@ -61,6 +61,7 @@ def result_post():
     #for row in cur:
     #    new_code = row[0] + 1
     #cur.close()
+    cur = con.execute("select MAX(コード) AS max_code from 商品一覧")
     new_code = cur + 1
 
     # 登録処理
