@@ -43,7 +43,7 @@ def index():
     # 商品一覧を読み込み
     cur = con.execute("select * from 商品一覧 order by コード")
     data = cur.fetchall()
-    con.close()
+    #con.close()
 
     return render_template('index.html', data = data)
 
@@ -54,16 +54,14 @@ def result_post():
     price = request.form["price"]
 
     # データベースを開く
-    con = get_db()
+    #con = get_db()
 
     # コードは既に登録されているコードの最大値＋１の値で新規登録を行う
-    #cur = con.execute("select MAX(コード) AS max_code from 商品一覧")
-    #for row in cur:
-    #    new_code = row[0] + 1
+    cur = con.execute("select MAX(コード) AS max_code from 商品一覧")
+    for row in cur:
+        new_code = row[0] + 1
     #cur.close()
-    cur = con.execute("select MAX(コード) AS max_code from '商品一覧'")
-    new_code = cur + 1
-
+    
     # 登録処理
     sql = "INSERT INTO 商品一覧(コード, 商品名, 値段)values({},'{}',{})".format(new_code, name, price)
     con.execute(sql)
@@ -72,7 +70,7 @@ def result_post():
     # 一覧再読み込み
     cur = con.execute("select * from 商品一覧 order by コード")
     data = cur.fetchall()
-    con.close()
+    #con.close()
 
     return render_template('index.html', data = data)
 
