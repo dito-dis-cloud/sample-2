@@ -54,7 +54,7 @@ def result_post():
     price = request.form["price"]
 
     # データベースを開く
-    #con = get_db()
+    con = get_db()
 
     # コードは既に登録されているコードの最大値＋１の値で新規登録を行う
     cur = con.execute("select MAX(コード) AS max_code from 商品一覧")
