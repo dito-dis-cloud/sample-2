@@ -24,8 +24,10 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>    
+    </div>
     <form action='/result'>
+        <!-- {{ }} で渡した変数を囲うとその変数の中身を表示することができる。 -->
+        <h2>{{ msg }}</h2>    
         <p>＜新規登録＞</p>
         <label>
             商品名    
