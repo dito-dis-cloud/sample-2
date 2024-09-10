@@ -7,8 +7,8 @@ app = Flask(__name__)
 def get_db():
     if 'db' not in g:
         # データベースをオープンしてFlaskのグローバル変数に保存
-       # g.db = sqlite3.connect('TestDB.db')
-        g.db = sqlite3.connect(':memory:')
+       # g.db = sqlite3.connect('./TestDB.db')
+       # g.db = sqlite3.connect(':memory:')
     return g.db
 
 @app.route('/')
