@@ -55,7 +55,7 @@ def result_post():
 
     # オブジェクトの型で振る舞いを変える
     if type(price) != int:
-        msg = 'priceの入力に誤りがあります。'
+        msg = price + 'priceの入力に誤りがあります。'
         return render_template('index.html', msg = msg)
     else:
         pass
