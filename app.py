@@ -58,7 +58,7 @@ def result_post():
         msg = 'priceの入力に誤りがあります。'
         return render_template('index.html', msg = msg)
     else:
-        pass
+
     
     # データベースを開く
     con = get_db()
