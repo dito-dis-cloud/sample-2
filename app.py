@@ -51,13 +51,7 @@ def index():
 def result_post():
     # テンプレートから新規登録する商品名と値段を取得
     name = request.form["name"]
-    price = request.form["price"]
-
-    # オブジェクトの型で振る舞いを変える
-    #if type(price) == 'int':
-    #    msg = price + 'priceの入力に誤りがあります。'
-    #    return render_template('index.html', msg = msg)
-    
+    price = request.form["price"] 
     
     # データベースを開く
     con = get_db()
