@@ -27,16 +27,16 @@ def index():
             # レコードを作る
             cur.execute(
                 """INSERT INTO 商品一覧(コード, 商品名, 値段) 
-                values(1, 'Cisco System', 350),
-                (2, 'Versa Networks', 380),
-                (3, 'Citrix Systems', 380),
-                (4, 'Lookout', 180),
-                (5, 'Amazon Web Services', 200),
-                (6, 'Cisco System', 180),
-                (7, 'Cisco System', 250),
-                (8, 'Cisco System', 100),
-                (9, 'Cisco System', 120),
-                (10, 'Cisco System', 120)
+                values(1, 'c506-01', 350),
+                (2, 'c801-01', 380),
+                (3, 'c990-00', 380),
+                (4, 'p556-02', 180),
+                (5, 'h990-90', 200),
+                (6, 'k440-20', 180),
+                (7, 'p568-44', 250),
+                (8, 'g779-11', 100),
+                (9, 'j943-33', 120),
+                (10, 't820-66', 120)
                 """)
             con.commit()
     
