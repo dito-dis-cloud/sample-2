@@ -54,7 +54,7 @@ def result_post():
     price = request.form["price"]
 
     # オブジェクトの型で振る舞いを変える
-    if type(price) != 'int':
+    if type(price) == 'int':
         msg = price + 'priceの入力に誤りがあります。'
         return render_template('index.html', msg = msg)
     else:
